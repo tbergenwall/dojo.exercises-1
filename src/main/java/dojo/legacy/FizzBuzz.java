@@ -5,14 +5,14 @@ public class FizzBuzz {
 		checkArgs(start, stop);
 		int length = stop - start + 1;
 		String[] array = new String[length];
-		for (int i = 0; i < length; i++) {
+		for (int i = 0; i < length; i ++) {
 			int test = start + i;
 			if (test % 15 == 0) {
-				array[i]="Fizzbuzz";
+				array[i] = "Fizzbuzz";
 			} else if (test % 5 == 0) {
-				array[i]="Buzz";
+				array[i] = "Buzz";
 			} else if (test % 3 == 0) {
-				array[i]="Fizz";
+				array[i] = "Fizz";
 			} else {
 				array[i] =  Integer.toString(test);
 			}
