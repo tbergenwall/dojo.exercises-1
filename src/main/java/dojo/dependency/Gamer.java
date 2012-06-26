@@ -12,7 +12,7 @@ public class Gamer {
     }
     
     public Gamer() {
-    	this.br = null;
+    	this.br = new BufferedReader(new InputStreamReader(System.in));
     }
     
     public Gamer(BufferedReader br) {
@@ -33,17 +33,9 @@ public class Gamer {
     public String read() {
             System.out.println("fizz buzz: "); 
             try {
-                    return getReader().readLine();
+                    return br.readLine();
             } catch (IOException ioe) {
                     return null;
             }
-    }
-    
-    private BufferedReader getReader() {
-    	if (this.br == null) {
-    		return new BufferedReader(new InputStreamReader(System.in));
-    	} else {
-    		return this.br;
-    	}
-    }
+    }    
 }
