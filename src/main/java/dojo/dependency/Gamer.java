@@ -5,9 +5,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Gamer {
+	private BufferedReader br;
 
     public static void main(String... args) {
             new Gamer().play();
+    }
+    
+    public Gamer() {
+    	this.br = null;
+    }
+    
+    public Gamer(BufferedReader br) {
+    	this.br = br;
     }
 
     public void play() {
@@ -22,12 +31,19 @@ public class Gamer {
     }
 
     public String read() {
-            System.out.println("fizz buzz: ");
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("fizz buzz: "); 
             try {
-                    return br.readLine();
+                    return getReader().readLine();
             } catch (IOException ioe) {
                     return null;
             }
+    }
+    
+    private BufferedReader getReader() {
+    	if (this.br == null) {
+    		return new BufferedReader(new InputStreamReader(System.in));
+    	} else {
+    		return this.br;
+    	}
     }
 }
